@@ -119,14 +119,14 @@ function mousePressed() {
   userStartAudio();
   playSynth();
      //if mouse is pressed inside "clear"
-  if (mouseX > width - 80 && mouseX < width && mouseY > 0 && mouseY < 30) {
+  if (mouseX > width - 120 && mouseX < width && mouseY > 0 && mouseY < 40) {
       //clear is true
       console.log("clear");
       clear = true;
       dwnld = false;
     
     //if mouse is pressed inside "dwnld"
-  } else if (mouseX > width - 80 && mouseX < width && mouseY > height - 30 && mouseY < height) {
+  } else if (mouseX > width - 120 && mouseX < width && mouseY > height - 40 && mouseY < height) {
       dwnld = true;
       clear = false;
       console.log("dwnld");
