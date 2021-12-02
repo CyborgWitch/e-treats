@@ -157,7 +157,7 @@ function playSynth() {
   //userStartAudio();
   if (clear && !dwnld) {
      polySynth.play("G4",  0.1, 0, 0.3);
-     polySynth.play("C4",  0.1, 0.4, 0.3);
+     polySynth.play("C4",  0.1, 0.3, 0.3);
      clear=false;
      console.log("clear off");
     
