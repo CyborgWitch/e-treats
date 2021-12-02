@@ -181,16 +181,16 @@ function mouseDragged() {
     strokeWeight(2);
     rect(width - 119.5, 0.5, 119.5, 39.5);
     rect(width - 119.5, height - 39.5, 119.5, 39.5);
-    rect(0.5, 0.5, 269.5, 49.5);
+    rect(0.5, 0.5, 399.5, 79.5);
 
     push();
       fill(0);
       //fill(203, 194, 184);
-      textSize(22);
-      textLeading(22);
-      text("*clear*", width - 72, 22);
-      text("*dwnld*", width - 77, height - 7);
-      text("claim your e-treat! \ndraw yourself a picture <*3", 5, 20);
+      textSize(32);
+      textLeading(32);
+      text("*clear*", width - 105, 30);
+      text("*dwnld*", width - 112, height - 10);
+      text("claim your e-treat! \ndraw yourself a picture <*3", 5, 30);
     pop();
   pop();
 }
