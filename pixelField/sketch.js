@@ -9,12 +9,27 @@ let v;
 let speed;
 
 function setup() {
+  setDimensions();
   createCanvas(window.innerWidth, window.innerHeight);
   //createCanvas(500, 500);
   background(random(150,255), random(150,255), random(150,255));
 
   polySynth = new p5.PolySynth();
   monoSynth = new p5.MonoSynth();
+}
+
+function windowResized() {
+  setDimensions();
+  //background(0, 255, 0);
+  //background(random(150, 255), random(150, 255), random(150, 255));
+  resizeCanvas(width, height);
+  background(random(150, 255), random(150, 255), random(150, 255));
+}
+
+function setDimensions() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  //background(random(150, 255), random(150, 255), random(150, 255));
 }
 
 function draw() {
