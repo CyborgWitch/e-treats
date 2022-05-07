@@ -67,9 +67,7 @@ function draw() {
     text(mousePressedTime, 394, 38);
   pop();
   
-  text('hi lucy :~))', 20, 82);
-
-    //mouseIsPressed for incrementally running through words/i, changing speed of circle
+  //mouseIsPressed for incrementally running through words/i, changing speed of circle
   if (mouseIsPressed) {
       //console.log(mouseX, mouseY);
       speed = speed+0.0001;
