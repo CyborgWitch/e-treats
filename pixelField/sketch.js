@@ -10,7 +10,7 @@ let speed;
 
 function setup() {
   setDimensions();
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(window.innerWidth, window.innerHeight/2);
   //createCanvas(500, 500);
   background(random(150,255), random(150,255), random(150,255));
 
@@ -22,13 +22,13 @@ function windowResized() {
   setDimensions();
   //background(0, 255, 0);
   //background(random(150, 255), random(150, 255), random(150, 255));
-  resizeCanvas(width, height);
+  resizeCanvas(width, height/2);
   background(random(150, 255), random(150, 255), random(150, 255));
 }
 
 function setDimensions() {
   width = window.innerWidth;
-  height = window.innerHeight;
+  height = window.innerHeight/2;
   //background(random(150, 255), random(150, 255), random(150, 255));
 }
 
@@ -47,8 +47,8 @@ function draw() {
     rect(0.5, 0.5, width - 1, height - 1);
   pop();
 
-  for (let i = 0; i <= width; i = i + 40) {
-    for (let j = 0; j <= height; j = j + 40) {
+  for (let i = 0; i <= width; i = i + 20) {
+    for (let j = 0; j <= height; j = j + 20) {
       line(i, 0, i, height);
       line(0, j, width, j);
     }
@@ -69,7 +69,7 @@ function draw() {
       textLeading(32);
       text("*clear*", width - 105, 30);
       text("*dwnld*", width - 112, height - 10);
-      text("claim your e-treat! \ndraw yourself a picture <*3", 5, 30);
+      text("thanks for visiting! \ndraw yourself a picture <*3", 5, 30);
     pop();
   pop();
 
@@ -87,8 +87,8 @@ function draw() {
         rect(0.5, 0.5, width - 1, height - 1);
       pop();
 
-      for (let i = 0; i <= width; i = i + 40) {
-        for (let j = 0; j <= height; j = j + 40) {
+      for (let i = 0; i <= width; i = i + 20) {
+        for (let j = 0; j <= height; j = j + 20) {
           line(i, 0, i, height);
           line(0, j, width, j);
         }
@@ -107,7 +107,7 @@ function draw() {
           textLeading(32);
           text("*clear*", width - 105, 30);
           text("*dwnld*", width - 112, height - 10);
-          text("claim your e-treat! \ndraw yourself a picture <*3", 5, 30);
+          text("thanks for visiting! \ndraw yourself a picture <*3", 5, 30);
         pop();
       pop();
 
@@ -181,11 +181,11 @@ function playSynth() {
 function mouseDragged() {
   userStartAudio();
   playSynth();  
-  for (let i = 0; i <= width; i = i + 40) {
-    for (let j = 0; j <= height; j = j + 40) {
-      if (mouseX > i && mouseX < i + 40 && mouseY > j && mouseY < j + 40) {
+  for (let i = 0; i <= width; i = i + 20) {
+    for (let j = 0; j <= height; j = j + 20) {
+      if (mouseX > i && mouseX < i + 20 && mouseY > j && mouseY < j + 20) {
         fill(0);
-        rect(i, j, 40, 40);
+        rect(i, j, 20, 20);
       }
     }
   }
@@ -205,7 +205,7 @@ function mouseDragged() {
       textLeading(32);
       text("*clear*", width - 105, 30);
       text("*dwnld*", width - 112, height - 10);
-      text("claim your e-treat! \ndraw yourself a picture <*3", 5, 30);
+      text("thanks for visiting! \ndraw yourself a picture <*3", 5, 30);
     pop();
   pop();
 }
