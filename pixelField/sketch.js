@@ -10,7 +10,7 @@ let speed;
 
 function setup() {
   setDimensions();
-  createCanvas(window.innerWidth, window.innerHeight/3*2);
+  createCanvas(window.innerWidth, window.innerHeight/2);
   //createCanvas(500, 500);
   background(random(150,255), random(150,255), random(150,255));
 
@@ -22,13 +22,13 @@ function windowResized() {
   setDimensions();
   //background(0, 255, 0);
   //background(random(150, 255), random(150, 255), random(150, 255));
-  resizeCanvas(width, height/3*2);
+  resizeCanvas(width, height/2);
   background(random(150, 255), random(150, 255), random(150, 255));
 }
 
 function setDimensions() {
   width = window.innerWidth;
-  height = window.innerHeight/3*2;
+  height = window.innerHeight/2;
   //background(random(150, 255), random(150, 255), random(150, 255));
 }
 
