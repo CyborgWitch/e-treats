@@ -19,40 +19,40 @@ let xOff = 0.9;
 let lOff = 0.0001;
 
 // time variable
-let mousePressedTime = 1;
+let mousePressedTime = 0;
+let pressedTimeCurve;
 let mouseHasBeenPressed = false;
 
 //imgs
-let img0, img1, img2, img3;
-let crayonnette, basteleur, kingThings, favorit, fBold;
+let img3;
+let favorit, fBold;
 
 function preload() {
-  img2 = loadImage('assets/saltParameters_17orb.png');
-  img3 = loadImage('assets/saltParameters_16.png');
+  img3 = loadImage('assets/saltParameters_18.png');
   favorit = loadFont('assets/FavoritStd-Regular.otf');
   fBold = loadFont('assets/FavoritTrialStd-Bold.otf');
 }
 
 function setup() {
   createCanvas(650, 650);
-  textSize(12);
+  textSize(12.5);
   textAlign(LEFT);
   imageMode(CENTER);
   textFont(favorit);
 }
 
-function windowResized() {
-  resizeCanvas(650, 650);
-}
+// function windowResized() {
+//   resizeCanvas(650, 650);
+// }
 
 function draw() {  
   background(221, 212, 233);
   background(0, 85, 95);
   image(img3, width/2, height/2, width, height);
   
-  stroke(255, 0, 255);
-  strokeWeight(0.25);
-  
+//   stroke(255);
+//   strokeWeight(0.25);
+  fill(255, 61, 58);
   text('mousePressedTime');
   //breaking up text string into words/tokens
   poemTokens = RiTa.tokenize(poem);
@@ -60,31 +60,39 @@ function draw() {
        let chars = poemTokens[i].split('');
        //console.log(chars);
   }
-  console.log(mouseX, mouseY);
+  //console.log(mouseX, mouseY);
   push();
-    textFont(fBold);
-    textSize(13.5);
-    text(mousePressedTime, 394, 38);
+    fill(255, 61, 58);
+    textSize(14.5);
+    text(mousePressedTime, 376, 39.25);
   pop();
   
-  //mouseIsPressed for incrementally running through words/i, changing speed of circle
+
+    //mouseIsPressed for incrementally running through words/i, changing speed of circle
   if (mouseIsPressed) {
       //console.log(mouseX, mouseY);
       speed = speed+0.0001;
       push();
-        strokeWeight(1.5);
-        line(415, 57, 621, 57);
+        stroke(255, 61, 58);
+        noFill();
+        strokeWeight(1.1);
+        ellipse(388, 52.5, 10);
       pop();
-      if (mousePressedTime >=poemTokens.length) {
+      if (pressedTimeCurve >=poemTokens.length) {
           mousePressedTime = 1;
+          pressedTimeCurve = 0;
       } else {
-        mousePressedTime = mousePressedTime+1/5;
+          mousePressedTime = mousePressedTime+1/5;
+          pressedTimeCurve = map((log(mousePressedTime)), 0, 4.8, 0, 117);
+          console.log(mousePressedTime);
       }
   } else {
-      speed = speed+0.00005;
+      speed = speed+0.00002;
       push();
-        strokeWeight(1.5);
-        line(528, 73, 621, 73);
+        stroke(255, 61, 58);
+        noFill();
+        strokeWeight(1.1);
+        ellipse(510, 69.5, 10);
       pop();
       if (mousePressedTime>=poemTokens.length) {
           mousePressedTime = 0;
@@ -111,7 +119,7 @@ class p {
   }
   
   display() {
-    fill(255, 0, 255, 235);
+    fill(255);
     
     // drawing words as salt particles equidistant from center
     for (let i=0; i<poemTokens.length; i++) {
@@ -145,6 +153,6 @@ class p {
 }
 
 function mouseDragged() {
-    //radius = map(mouseX, 0, width, 235, 240);
+    radius = map(mouseX, 0, width, 220, 225);
 
 }
