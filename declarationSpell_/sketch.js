@@ -71,7 +71,7 @@ function draw() {
     //mouseIsPressed for incrementally running through words/i, changing speed of circle
   if (mouseIsPressed) {
       //console.log(mouseX, mouseY);
-      speed = speed+0.0001;
+      speed = speed+0.00005;
       push();
         stroke(255, 61, 58);
         noFill();
